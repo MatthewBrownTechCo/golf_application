@@ -6,7 +6,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 40px;
+  margin-top: 90px;
 }
 
 #title-logo {
@@ -18,11 +18,18 @@
   -webkit-text-stroke-color: black;
 }
 
-.home-btns {
+.top-btn {
   display: flex;
   flex-direction: row;
   height: 210px;
-  width: 600px;
+  margin-top: 20px;
+}
+
+.bottom-btns {
+  display: flex;
+  flex-direction: row;
+  height: 210px;
+  width: 900px;
   justify-content: space-between;
   margin-top: 20px;
 }
@@ -33,4 +40,5 @@
   width: 150px;
   background-color: rgb(251, 251, 225);
   border-radius: 20px;
+  font-size: 25px;
 }
