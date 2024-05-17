@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: row;
   height: 210px;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .bottom-btns {
@@ -31,10 +31,10 @@
   height: 210px;
   width: 900px;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
-.btn {
+.home-btn {
   display: inline-block;
   height: 150px;
   width: 150px;
