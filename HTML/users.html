@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/mainstyle.css" />
+    <link rel="stylesheet" href="/CSS/userstyle.css" />
+    <title>Not Scratch</title>
+  </head>
+  <body>
+    <div>
+      <div class="users-center">
+        <header id="users-logo">
+          *Not Scratch Logo w/ Transparent Background*
+        </header>
+        <header class="name-question">
+          <strong>Please enter up to 4 names to play!</strong>
+        </header>
+        <ol class="name-list" id="list"></ol>
+        <div class="player">
+          <label for="user"><strong>Player Name:</strong></label>
+          <input class="sp-input" id="user" />
+          <button class="sp-btn" onclick="addUser()">Add Player</button>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="cycle-btn-div">
+        <button class="cycle-btn" onclick="loadPage('home')"><- back</button>
+        <button class="cycle-btn" onclick="loadPage(selectedButton)">
+          next ->
+        </button>
+      </div>
+      <script src="/JavaScript/spscript.js"></script>
+      <script src="/JavaScript/functions.js"></script>
+    </div>
+  </body>
+</html>

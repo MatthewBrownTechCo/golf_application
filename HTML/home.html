@@ -8,42 +8,62 @@
     <title>Not Scratch</title>
   </head>
   <body>
-    <div class="home-center">
-      <header id="title-logo">
-        *Not Scratch Logo w/ Transparent Background*
-      </header>
-      <div class="top-btn">
-        <button
-          class="home-btn"
-          onclick="window.location.href = 'strokeplay.html';"
-        >
-          Stroke Play (Standard)
-        </button>
-      </div>
-      <div class="bottom-btns">
-        <button
-          class="home-btn"
-          onclick="window.location.href = 'threeputts.html';"
-        >
-          3 Putts
-        </button>
-        <button
-          class="home-btn"
-          onclick="window.location.href = 'stableford.html';"
-        >
-          Stableford
-        </button>
-        <button class="home-btn" onclick="window.location.href = 'gir.html';">
-          GIR
-        </button>
-        <button class="home-btn" onclick="window.location.href = 'fir.html';">
-          FIR
-        </button>
-        <button class="home-btn" onclick="window.location.href = 'bbb.html';">
-          Bingo Bango Bongo
-        </button>
+    <div id="content">
+      <div class="home-center">
+        <header id="title-logo">
+          *Not Scratch Logo w/ Transparent Background*
+        </header>
+        <div class="top-btn">
+          <button
+            id="strokeplay"
+            class="home-btn"
+            onclick="loadPage('users'); saveSelection(this);"
+          >
+            Stroke Play (Standard)
+          </button>
+        </div>
+        <div class="bottom-btns">
+          <button
+            id="threeputts"
+            class="home-btn"
+            onclick="loadPage('users'); saveSelection(this);"
+          >
+            Three Putts
+          </button>
+          <button
+            id="stableford"
+            class="home-btn"
+            onclick="loadPage('users'); saveSelection(this);"
+          >
+            Stableford
+          </button>
+          <button
+            id="gir"
+            class="home-btn"
+            onclick="loadPage('users'); saveSelection(this);"
+          >
+            GIR
+          </button>
+          <button
+            id="fir"
+            class="home-btn"
+            onclick="onclick"
+            ="loadPage('users'); saveSelection(this);"
+          >
+            FIR
+          </button>
+          <button
+            id="bbb"
+            class="home-btn"
+            onclick="onclick"
+            ="loadPage('users'); saveSelection(this);"
+          >
+            Bingo-Bango-Bongo
+          </button>
+        </div>
       </div>
     </div>
-    <script src="/JavaScript/homescript.js"></script>
+    <script src="/JavaScript/variables.js"></script>
+    <script src="/JavaScript/functions.js"></script>
   </body>
 </html>

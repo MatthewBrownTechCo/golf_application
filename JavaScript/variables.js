@@ -1,0 +1,3 @@
+playerNames = [];
+
+let selectedButton = null;
