@@ -4,8 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stroke Play</title>
+    <link rel="stylesheet" href="/CSS/mainstyle.css" />
+    <link rel="stylesheet" href="/CSS/spstyle.css" />
   </head>
   <body>
-    <p>test</p>
+    <div class="container">
+      <div class="player-select">
+        <button id="back-btn"><-</button>
+        <span id="player"></span>
+        <button id="next-btn">-></button>
+      </div>
+      <div class="btn-top">
+        <button class="button">-1</button>
+        <button class="button">+1</button>
+      </div>
+      <span id="current-strokes">NUM</span>
+      <div>
+        <button id="completed">Finish Hole</button>
+      </div>
+    </div>
+    <script src="/JavaScript/variables.js"></script>
+    <script src="/JavaScript/functions.js"></script>
   </body>
 </html>

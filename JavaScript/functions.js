@@ -25,7 +25,6 @@ function addUser() {
   nameList.setAttribute("onclick", "this.remove()");
 }
 
-console.log(playerNames);
 // ------------------- //
 
 // Transitions to a new html page dynamically, instead of loading it all
@@ -48,3 +47,6 @@ function loadPage(page) {
 function saveSelection(button) {
   selectedButton = button.id;
 }
+
+// Placeholder function for players 1-4
+function playersDefault() {}
