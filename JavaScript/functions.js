@@ -1,3 +1,24 @@
+// Transitions to a new html page dynamically, instead of loading it all
+function loadPage(page) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        document.getElementById("content").innerHTML = xhr.responseText;
+      } else {
+        console.error("Failed to load page:", xhr.status);
+      }
+    }
+  };
+  xhr.open("GET", page + ".html", true);
+  xhr.send();
+}
+
+// Saves the button selected at the game selection menu
+function saveSelection(button) {
+  selectedButton = button.id;
+}
+
 // Adds user and creates an ordered list
 function addUser() {
   const nameElement = document.getElementById("user");
@@ -25,28 +46,21 @@ function addUser() {
   nameList.setAttribute("onclick", "this.remove()");
 }
 
-// ------------------- //
-
-// Transitions to a new html page dynamically, instead of loading it all
-function loadPage(page) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        document.getElementById("content").innerHTML = xhr.responseText;
-      } else {
-        console.error("Failed to load page:", xhr.status);
-      }
-    }
-  };
-  xhr.open("GET", page + ".html", true);
-  xhr.send();
-}
-
-// Saves the button selected at the game selection menu
-function saveSelection(button) {
-  selectedButton = button.id;
-}
-
 // Placeholder function for players 1-4
-function playersDefault() {}
+function nextPlayer() {
+  let i = 0;
+
+  return function () {
+    const defaultPlayer = playerDefault[i];
+    const nextBtn = document.getElementById("player");
+    i = (i + 1) % playerDefault.length;
+    nextBtn.innerHTML = defaultPlayer;
+    return defaultPlayer;
+  };
+}
+
+const nextPlayerCycle = nextPlayer();
+
+function nextPlayerHandler() {
+  nextPlayerCycle();
+}
