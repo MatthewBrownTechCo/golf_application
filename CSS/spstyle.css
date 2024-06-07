@@ -8,6 +8,68 @@
   transform: translate(-50%, -50%);
 }
 
-.btn-top {
-  margin-top: 50px;
+.hole-select {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#prev-hole {
+  margin-right: 46px;
+}
+
+#hole {
+  font-size: 30px;
+  width: 79px;
+  white-space: nowrap;
+}
+
+#next-hole {
+  margin-left: 46px;
+}
+
+.player-select {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.button {
+  height: 70px;
+  width: 70px;
+  text-align: center;
+}
+
+#back-btn {
+  margin-right: 40px;
+}
+
+#player {
+  font-size: 30px;
+}
+
+#next-btn {
+  margin-left: 40px;
+}
+
+#current-strokes {
+  margin-top: 20%;
+  font-size: 50px;
+}
+
+.stroke-counter {
+  margin-top: 110px;
+}
+
+#minus-stroke {
+  margin-right: 31px;
+}
+
+#completed {
+  width: 100px;
+  height: 70px;
+}
+
+#plus-stroke {
+  margin-left: 31px;
 }

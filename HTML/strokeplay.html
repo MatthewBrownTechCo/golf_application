@@ -9,18 +9,25 @@
   </head>
   <body>
     <div class="container">
+      <div class="hole-select">
+        <button id="prev-hole" class="button" onclick="prevHole()"><-</button>
+        <span id="hole">Hole: 1</span>
+        <button id="next-hole" class="button" onclick="nextHole()">-></button>
+      </div>
       <div class="player-select">
-        <button id="back-btn"><-</button>
+        <button id="back-btn" class="button"><-</button>
         <span id="player"></span>
-        <button id="next-btn" onClick="nextPlayerHandler()">-></button>
+        <button id="next-btn" class="button" onClick="nextPlayerHandler()">
+          ->
+        </button>
       </div>
-      <div class="btn-top">
-        <button class="button">-1</button>
-        <button class="button">+1</button>
-      </div>
-      <span id="current-strokes">NUM</span>
-      <div>
-        <button id="completed">Finish Hole</button>
+      <span id="current-strokes">Strokes: 0</span>
+      <div class="stroke-counter">
+        <button id="minus-stroke" class="button" onclick="minusOne()">
+          -1
+        </button>
+        <button id="completed" class="button">Finish Hole</button>
+        <button id="plus-stroke" class="button" onclick="plusOne()">+1</button>
       </div>
     </div>
     <script src="/JavaScript/variables.js"></script>

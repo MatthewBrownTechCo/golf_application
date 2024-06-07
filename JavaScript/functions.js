@@ -46,7 +46,31 @@ function addUser() {
   nameList.setAttribute("onclick", "this.remove()");
 }
 
+// Next hole
+function nextHole() {
+  hole++;
+  if (hole > 18) {
+    hole = 18;
+  }
+  currentHole.innerHTML = "Hole: " + hole;
+}
+
+window.onload = function () {
+  nextHole();
+};
+
+// Prev hole
+function prevHole() {
+  hole--;
+  if (hole < 1) {
+    hole = 1;
+  }
+  currentHole.innerHTML = "Hole: " + hole;
+}
+
 // Placeholder function for players 1-4
+function prevPlayer() {}
+
 function nextPlayer() {
   let i = 0;
 
@@ -63,4 +87,26 @@ const nextPlayerCycle = nextPlayer();
 
 function nextPlayerHandler() {
   nextPlayerCycle();
+}
+
+window.onload = function () {
+  nextPlayerHandler();
+};
+// end of section //
+
+// Strokes function
+function plusOne() {
+  strokes++;
+  if (strokes <= 0) {
+    strokes = 1;
+  }
+  currentStrokes.innerHTML = "Strokes: " + strokes;
+}
+
+function minusOne() {
+  strokes--;
+  if (strokes < 0) {
+    return;
+  }
+  currentStrokes.innerHTML = "Strokes: " + strokes;
 }
