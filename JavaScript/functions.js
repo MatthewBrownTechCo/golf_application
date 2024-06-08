@@ -69,28 +69,25 @@ function prevHole() {
 }
 
 // Placeholder function for players 1-4
-function prevPlayer() {}
 
-function nextPlayer() {
-  let i = 0;
-
-  return function () {
-    const defaultPlayer = playerDefault[i];
-    const nextBtn = document.getElementById("player");
-    i = (i + 1) % playerDefault.length;
-    nextBtn.innerHTML = defaultPlayer;
-    return defaultPlayer;
-  };
+function prevPlayerHandler() {
+  const playerDisplay = document.getElementById("player");
+  currentPlayerIndex =
+    currentPlayerIndex === 0
+      ? playerDefault.length - 1
+      : currentPlayerIndex - 1;
+  playerDisplay.innerHTML = playerDefault[currentPlayerIndex];
 }
 
-const nextPlayerCycle = nextPlayer();
-
 function nextPlayerHandler() {
-  nextPlayerCycle();
+  const playerDisplay = document.getElementById("player");
+  currentPlayerIndex = (currentPlayerIndex + 1) % playerDefault.length;
+  playerDisplay.innerHTML = playerDefault[currentPlayerIndex];
 }
 
 window.onload = function () {
-  nextPlayerHandler();
+  const playerDisplay = document.getElementById("player");
+  playerDisplay.innerHTML = playerDefault[0];
 };
 // end of section //
 
@@ -110,3 +107,5 @@ function minusOne() {
   }
   currentStrokes.innerHTML = "Strokes: " + strokes;
 }
+
+function finishHole() {}
