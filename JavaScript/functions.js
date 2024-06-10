@@ -46,24 +46,22 @@ function addUser() {
   nameList.setAttribute("onclick", "this.remove()");
 }
 
-// Next hole
-function nextHole() {
-  hole++;
-  if (hole > 18) {
-    hole = 18;
+// Prev hole
+function prevHole() {
+  const currentHole = document.getElementById("hole");
+  hole--;
+  if (hole < 1) {
+    hole = 1;
   }
   currentHole.innerHTML = "Hole: " + hole;
 }
 
-window.onload = function () {
-  nextHole();
-};
-
-// Prev hole
-function prevHole() {
-  hole--;
-  if (hole < 1) {
-    hole = 1;
+// Next hole
+function nextHole() {
+  const currentHole = document.getElementById("hole");
+  hole++;
+  if (hole > 18) {
+    hole = 18;
   }
   currentHole.innerHTML = "Hole: " + hole;
 }
@@ -85,14 +83,11 @@ function nextPlayerHandler() {
   playerDisplay.innerHTML = playerDefault[currentPlayerIndex];
 }
 
-window.onload = function () {
-  const playerDisplay = document.getElementById("player");
-  playerDisplay.innerHTML = playerDefault[0];
-};
 // end of section //
 
 // Strokes function
 function plusOne() {
+  const currentStrokes = document.getElementById("current-strokes");
   strokes++;
   if (strokes <= 0) {
     strokes = 1;
@@ -101,6 +96,7 @@ function plusOne() {
 }
 
 function minusOne() {
+  const currentStrokes = document.getElementById("current-strokes");
   strokes--;
   if (strokes < 0) {
     return;
