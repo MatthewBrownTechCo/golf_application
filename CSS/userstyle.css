@@ -77,10 +77,20 @@
   height: 70px;
   width: 50px;
   transform: rotate(-90deg);
+  border: 2px solid transparent;
+}
+
+.back-arrow:hover {
+  border: 2px solid white;
 }
 
 .fwd-arrow {
   height: 70px;
   width: 50px;
   transform: rotate(90deg);
+  border: 2px solid transparent;
+}
+
+.fwd-arrow:hover {
+  border: 2px solid white;
 }
