@@ -8,7 +8,7 @@
     <title>Not Scratch</title>
   </head>
   <body>
-    <div>
+    <div id="content">
       <div class="users-center">
         <header id="users-logo">
           *Not Scratch Logo w/ Transparent Background*
@@ -26,9 +26,17 @@
       <br />
       <br />
       <div class="cycle-btn-div">
-        <button class="cycle-btn" onclick="loadPage('home')"><- back</button>
+        <button class="cycle-btn" onclick="loadPage('home')">
+          <img
+            src="https://cdn.discordapp.com/attachments/465350957077889033/1250616118486368317/Pngtreeup_direction_arrow_icon_4243605.png?ex=666b9685&is=666a4505&hm=132cc72a0455a1d00fe060ed83461d1a0e52328630f86490c2740071295da236&"
+            class="back-arrow"
+          />
+        </button>
         <button class="cycle-btn" onclick="loadPage(selectedButton)">
-          next ->
+          <img
+            src="https://cdn.discordapp.com/attachments/465350957077889033/1250616118486368317/Pngtreeup_direction_arrow_icon_4243605.png?ex=666b9685&is=666a4505&hm=132cc72a0455a1d00fe060ed83461d1a0e52328630f86490c2740071295da236&"
+            class="fwd-arrow"
+          />
         </button>
       </div>
       <script src="/JavaScript/variables.js"></script>

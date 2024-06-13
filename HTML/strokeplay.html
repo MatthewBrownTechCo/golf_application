@@ -8,28 +8,32 @@
     <link rel="stylesheet" href="/CSS/spstyle.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="hole-select">
-        <button id="prev-hole" class="button" onclick="prevHole()"><-</button>
-        <span id="hole">Hole: 1</span>
-        <button id="next-hole" class="button" onclick="nextHole()">-></button>
-      </div>
-      <div class="player-select">
-        <button id="back-btn" class="button" onclick="prevPlayerHandler()">
-          <-
-        </button>
-        <span id="player">Player 1</span>
-        <button id="next-btn" class="button" onclick="nextPlayerHandler()">
-          ->
-        </button>
-      </div>
-      <span id="current-strokes">Strokes: 0</span>
-      <div class="stroke-counter">
-        <button id="minus-stroke" class="button" onclick="minusOne()">
-          -1
-        </button>
-        <button id="completed" class="button">Finish Hole</button>
-        <button id="plus-stroke" class="button" onclick="plusOne()">+1</button>
+    <div id="content">
+      <div class="container">
+        <div class="hole-select">
+          <button id="prev-hole" class="button" onclick="prevHole()"><-</button>
+          <span id="hole">Hole: 1</span>
+          <button id="next-hole" class="button" onclick="nextHole()">-></button>
+        </div>
+        <div class="player-select">
+          <button id="back-btn" class="button" onclick="prevPlayerHandler()">
+            <-
+          </button>
+          <span id="player">Player 1</span>
+          <button id="next-btn" class="button" onclick="nextPlayerHandler()">
+            ->
+          </button>
+        </div>
+        <span id="current-strokes">Strokes: 0</span>
+        <div class="stroke-counter">
+          <button id="minus-stroke" class="button" onclick="minusOne()">
+            -1
+          </button>
+          <button id="completed" class="button">Finish Hole</button>
+          <button id="plus-stroke" class="button" onclick="plusOne()">
+            +1
+          </button>
+        </div>
       </div>
     </div>
     <script src="/JavaScript/variables.js"></script>
