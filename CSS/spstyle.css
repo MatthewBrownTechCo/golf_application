@@ -11,7 +11,6 @@
 .hole-select {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
 }
 
 #prev-hole {
@@ -61,7 +60,7 @@
 }
 
 #current-strokes {
-  margin-top: 20%;
+  margin-top: 10%;
   font-size: 50px;
 }
 
@@ -73,11 +72,12 @@
   margin-right: 50px;
   font-size: 35px;
   background: none;
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 
 #minus-stroke:hover {
-  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.351);
+  cursor: pointer;
 }
 
 #completed {
@@ -86,20 +86,22 @@
   font-size: 35px;
   text-align: center;
   background: none;
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 
 #completed:hover {
-  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.351);
+  cursor: pointer;
 }
 
 #plus-stroke {
   margin-left: 50px;
   font-size: 35px;
   background: none;
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 
 #plus-stroke:hover {
-  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.351);
+  cursor: pointer;
 }

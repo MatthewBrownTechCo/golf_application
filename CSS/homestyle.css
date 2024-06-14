@@ -9,20 +9,20 @@
   margin-top: 90px;
 }
 
-#title-logo {
-  margin-bottom: 20px;
-  font-size: 50px;
+.centered-logo {
+  display: inline-block;
   text-align: center;
-  text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.718);
-  -webkit-text-stroke-width: 0.6px;
-  -webkit-text-stroke-color: black;
+}
+
+#home-logo {
+  width: 50%;
+  position: center;
 }
 
 .top-btn {
   display: flex;
   flex-direction: row;
   height: 210px;
-  margin-top: 60px;
 }
 
 .bottom-btns {
@@ -38,7 +38,7 @@
   display: inline-block;
   height: 150px;
   width: 150px;
-  background-color: rgb(251, 251, 225);
+  background-color: rgb(228, 255, 0);
   border-radius: 20px;
   font-size: 25px;
 }

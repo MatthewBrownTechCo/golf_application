@@ -82,6 +82,7 @@
 
 .back-arrow:hover {
   border: 2px solid white;
+  cursor: pointer;
 }
 
 .fwd-arrow {
@@ -93,4 +94,5 @@
 
 .fwd-arrow:hover {
   border: 2px solid white;
+  cursor: pointer;
 }

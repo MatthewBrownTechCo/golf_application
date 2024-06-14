@@ -4,6 +4,4 @@ To-Do List (Delete as tasks are completed):
     - Needs to have an if statement that says if the hole number is *this*, 
     and if the player is *this*, then the score is pushed to that player's 
     array in the appropriate hole index.
-* Consolidate functions built for strokeplay into its own JS file for optimal
-accessibility.
-* 
+* Add a Quit button to strokeplay
