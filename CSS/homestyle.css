@@ -9,16 +9,6 @@
   margin-top: 90px;
 }
 
-.centered-logo {
-  display: inline-block;
-  text-align: center;
-}
-
-#home-logo {
-  width: 50%;
-  position: center;
-}
-
 .top-btn {
   display: flex;
   flex-direction: row;
@@ -38,7 +28,7 @@
   display: inline-block;
   height: 150px;
   width: 150px;
-  background-color: rgb(228, 255, 0);
+  background-color: rgb(252, 252, 252);
   border-radius: 20px;
   font-size: 25px;
 }

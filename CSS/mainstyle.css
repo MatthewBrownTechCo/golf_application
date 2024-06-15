@@ -3,3 +3,18 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(228, 255, 0);
 }
+
+.centered-logo {
+  display: inline-block;
+  text-align: center;
+}
+
+#home-logo {
+  width: 50%;
+  position: center;
+}
+
+#small-logo {
+  width: 20%;
+  text-align: center;
+}

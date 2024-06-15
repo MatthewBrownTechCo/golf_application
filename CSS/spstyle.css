@@ -60,7 +60,7 @@
 }
 
 #current-strokes {
-  margin-top: 10%;
+  margin-top: 5%;
   font-size: 50px;
 }
 
@@ -73,10 +73,11 @@
   font-size: 35px;
   background: none;
   border: 2px solid white;
+  color: rgb(228, 255, 0);
 }
 
 #minus-stroke:hover {
-  background-color: rgba(255, 255, 255, 0.351);
+  background-color: rgba(255, 255, 255, 0.244);
   cursor: pointer;
 }
 
@@ -87,10 +88,11 @@
   text-align: center;
   background: none;
   border: 2px solid white;
+  color: rgb(228, 255, 0);
 }
 
 #completed:hover {
-  background-color: rgba(255, 255, 255, 0.351);
+  background-color: rgba(255, 255, 255, 0.244);
   cursor: pointer;
 }
 
@@ -99,9 +101,10 @@
   font-size: 35px;
   background: none;
   border: 2px solid white;
+  color: rgb(228, 255, 0);
 }
 
 #plus-stroke:hover {
-  background-color: rgba(255, 255, 255, 0.351);
+  background-color: rgba(255, 255, 255, 0.244);
   cursor: pointer;
 }
