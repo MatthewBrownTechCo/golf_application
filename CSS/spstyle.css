@@ -14,17 +14,17 @@
 }
 
 #prev-hole {
-  margin-right: 46px;
+  margin-right: 48px;
 }
 
 #hole {
   font-size: 30px;
-  width: 79px;
+  width: 90px;
   white-space: nowrap;
 }
 
 #next-hole {
-  margin-left: 46px;
+  margin-left: 48px;
 }
 
 .player-select {

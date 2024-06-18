@@ -93,6 +93,7 @@ function plusOne() {
     strokes = 1;
   }
   currentStrokes.innerHTML = "Strokes: " + strokes;
+  return strokes;
 }
 
 function minusOne() {
@@ -102,6 +103,29 @@ function minusOne() {
     return;
   }
   currentStrokes.innerHTML = "Strokes: " + strokes;
+  return strokes;
 }
 
-function finishHole() {}
+function finishHole() {
+  const player = document.getElementById("player");
+  const playerNames = player.innerText;
+  const currentStrokes = document.getElementById("current-strokes");
+
+  if (playerNames == playerDefault[0]) {
+    holeScoreP1[hole - 1] = strokes;
+  } else if (playerNames == playerDefault[1]) {
+    holeScoreP2[hole - 1] = strokes;
+  } else if (playerNames == playerDefault[2]) {
+    holeScoreP3[hole - 1] = strokes;
+  } else if (playerNames == playerDefault[3]) {
+    holeScoreP4[hole - 1] = strokes;
+  }
+
+  strokes = 0;
+  currentStrokes.innerHTML = "Strokes: " + strokes;
+
+  console.log(holeScoreP1);
+  console.log(holeScoreP2);
+  console.log(holeScoreP3);
+  console.log(holeScoreP4);
+}
