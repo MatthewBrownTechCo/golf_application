@@ -59,6 +59,13 @@
   margin-left: 40px;
 }
 
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  font-size: 25px;
+}
+
 #current-strokes {
   margin-top: 5%;
   font-size: 50px;

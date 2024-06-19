@@ -107,8 +107,8 @@ function minusOne() {
 }
 
 function finishHole() {
-  const player = document.getElementById("player");
-  const playerNames = player.innerText;
+  const playerDisplay = document.getElementById("player");
+  const playerNames = playerDisplay.innerText;
   const currentStrokes = document.getElementById("current-strokes");
 
   if (playerNames == playerDefault[0]) {
@@ -124,8 +124,33 @@ function finishHole() {
   strokes = 0;
   currentStrokes.innerHTML = "Strokes: " + strokes;
 
+  player1Total();
+
+  if (playerNames == playerDefault[3] && hole !== 18) {
+    nextHole();
+    playerDisplay.innerHTML = playerDefault[0];
+  } else if (hole !== 18) {
+    nextPlayerHandler();
+  }
+
+  if (playerNames == playerDefault[3] && hole == 18) {
+    loadPage("scorecard");
+  }
+
   console.log(holeScoreP1);
   console.log(holeScoreP2);
   console.log(holeScoreP3);
   console.log(holeScoreP4);
+}
+
+function player1Total() {
+  const player1Score = document.getElementById("player1");
+
+  for (let i = 0; i <= holeScoreP1.length - 1; i++) {
+    p1Total += holeScoreP1[i];
+    console.log(p1Total);
+  }
+  player1Score.innerHTML = "Player 1: " + p1Total;
+  p1Total = 0;
+  return p1Total;
 }
