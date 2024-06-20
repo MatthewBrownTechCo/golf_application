@@ -41,7 +41,7 @@
   border: none;
 }
 
-.pms-button {
+.mps-button {
   height: 70px;
   width: 70px;
   text-align: center;
@@ -89,7 +89,7 @@
 }
 
 #completed {
-  width: 200px;
+  width: 230px;
   height: 100px;
   font-size: 35px;
   text-align: center;
