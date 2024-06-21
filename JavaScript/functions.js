@@ -220,15 +220,8 @@ function finishHole() {
     nextPlayerHandler();
   }
 
-  if (hole == 18 && playerDefault[3]) {
-    completed.innerHTML = "Finish Game";
-    completed.setAttribute("onclick", "finishGame()");
-  }
-
   console.log(holeScoreP1);
   console.log(holeScoreP2);
   console.log(holeScoreP3);
   console.log(holeScoreP4);
 }
-
-function finishGame() {}

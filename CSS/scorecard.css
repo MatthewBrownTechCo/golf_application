@@ -20,7 +20,7 @@
   color: rgb(228, 255, 0);
   height: relative;
   width: relative;
-  padding: 3%;
+  padding: 2%;
   text-align: center;
   background: none;
   border: 2px solid rgb(228, 255, 0);
@@ -28,9 +28,27 @@
   font-weight: 600;
 }
 
+#gameover:hover {
+  cursor: pointer;
+}
+
+.gameover-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  text-decoration: none;
+  cursor: auto;
+}
+
 .gameover-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+}
+
+#gameover {
+  text-decoration: none;
+  font-size: 18px;
 }
