@@ -1,0 +1,36 @@
+#endgame-title {
+  font-size: 25px;
+  text-align: center;
+}
+
+.final-score {
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 250px;
+  margin-left: 250px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 25px;
+}
+
+#gameover {
+  font-size: 15px;
+  color: rgb(228, 255, 0);
+  height: relative;
+  width: relative;
+  padding: 3%;
+  text-align: center;
+  background: none;
+  border: 2px solid rgb(228, 255, 0);
+  text-wrap: nowrap;
+  font-weight: 600;
+}
+
+.gameover-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}

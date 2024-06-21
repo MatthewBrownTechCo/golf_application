@@ -18,3 +18,10 @@ body {
   width: 20%;
   text-align: center;
 }
+
+.ingame-score {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  font-size: 25px;
+}

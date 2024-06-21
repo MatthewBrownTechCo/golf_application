@@ -1,7 +1,0 @@
-To-Do List (Delete as tasks are completed):
-
-* Create finishHole function.
-    - Needs to have an if statement that says if the hole number is *this*, 
-    and if the player is *this*, then the score is pushed to that player's 
-    array in the appropriate hole index.
-* Add a Quit button to strokeplay

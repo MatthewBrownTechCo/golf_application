@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="/CSS/scorecard.css" />
   </head>
   <body>
-    <header><img src="/Logos/NotScratchShortWhiteYF.png" /></header>
+    <header class="centered-logo">
+      <img id="small-logo" src="/Logos/NotScratchShortWhiteYF.png" />
+    </header>
+    <div id="endgame-title">Game over! Thanks for playing!</div>
+    <div class="final-score">
+      <span class="score-values" id="player1">Player 1: 0</span>
+      <span class="score-values" id="player2">Player 2: 0</span>
+      <span class="score-values" id="player3">Player 3: 0</span>
+      <span class="score-values" id="player4">Player 4: 0</span>
+    </div>
+    <div class="gameover-btn">
+      <button id="gameover" onclick="gameover()">Return Home</button>
+    </div>
   </body>
 </html>
