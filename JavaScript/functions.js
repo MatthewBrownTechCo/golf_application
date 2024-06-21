@@ -101,7 +101,7 @@ function nextPlayerHandler() {
 
   if (hole == 18 && playerDisplay.innerText == playerDefault[3]) {
     completed.innerHTML = "Finish Game";
-    completed.setAttribute("onclick", "finishGame()");
+    completed.setAttribute("onclick", "loadPage('scorecard')");
   }
 
   if (
@@ -122,7 +122,7 @@ function minusOne() {
   if (strokes < 0) {
     return;
   }
-  currentStrokes.innerHTML = "Strokes: " + strokes;
+  currentStrokes.innerHTML = `Strokes: ${strokes}`;
   return strokes;
 }
 
@@ -132,7 +132,7 @@ function plusOne() {
   if (strokes <= 0) {
     strokes = 1;
   }
-  currentStrokes.innerHTML = "Strokes: " + strokes;
+  currentStrokes.innerHTML = `Strokes: ${strokes}`;
   return strokes;
 }
 
