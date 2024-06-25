@@ -46,6 +46,29 @@ function addUser() {
   nameList.setAttribute("onclick", "this.remove()");
 }
 
+function playerFill() {
+  if (playerNames.length == 0) {
+    playerNames.push("Player 1", "Player 2", "Player 3", "Player 4");
+  } else if (playerNames.length == 1) {
+    playerNames.push("Player 2", "Player 3", "Player 4");
+  } else if (playerNames.length == 2) {
+    playerNames.push("Player 3", "Player 4");
+  } else if (playerNames.length == 3) {
+    playerNames.push("Player 4");
+  }
+
+  console.log(playerNames);
+}
+
+function initialUser() {
+  const player = document.getElementById("player");
+  if (player) {
+    player.innerHTML = playerNames[0];
+  } else {
+    console.error("Element with id 'player' not found.");
+  }
+}
+
 // Prev hole
 function prevHole() {
   const currentHole = document.getElementById("hole");
@@ -73,19 +96,17 @@ function prevPlayerHandler() {
   const completed = document.getElementById("completed");
 
   currentPlayerIndex =
-    currentPlayerIndex === 0
-      ? playerDefault.length - 1
-      : currentPlayerIndex - 1;
-  playerDisplay.innerHTML = playerDefault[currentPlayerIndex];
+    currentPlayerIndex === 0 ? playerNames.length - 1 : currentPlayerIndex - 1;
+  playerDisplay.innerHTML = playerNames[currentPlayerIndex];
 
-  if (hole == 18 && playerDisplay.innerText == playerDefault[3]) {
+  if (hole == 18 && playerDisplay.innerText == playerNames[3]) {
     completed.innerHTML = "Finish Game";
     completed.setAttribute("onclick", "finishGame()");
   }
 
   if (
     completed.innerText == "Finish Game" &&
-    playerDisplay.innerText !== playerDefault[3]
+    playerDisplay.innerText !== playerNames[3]
   ) {
     completed.innerHTML = "Finish Hole";
     completed.setAttribute("onclick", "finishHole()");
@@ -96,17 +117,17 @@ function nextPlayerHandler() {
   const playerDisplay = document.getElementById("player");
   const completed = document.getElementById("completed");
 
-  currentPlayerIndex = (currentPlayerIndex + 1) % playerDefault.length;
-  playerDisplay.innerHTML = playerDefault[currentPlayerIndex];
+  currentPlayerIndex = (currentPlayerIndex + 1) % playerNames.length;
+  playerDisplay.innerHTML = playerNames[currentPlayerIndex];
 
-  if (hole == 18 && playerDisplay.innerText == playerDefault[3]) {
+  if (hole == 18 && playerDisplay.innerText == playerNames[3]) {
     completed.innerHTML = "Finish Game";
     completed.setAttribute("onclick", "loadPage('scorecard')");
   }
 
   if (
     completed.innerText == "Finish Game" &&
-    playerDisplay.innerText !== playerDefault[3]
+    playerDisplay.innerText !== playerNames[3]
   ) {
     completed.innerHTML = "Finish Hole";
     completed.setAttribute("onclick", "finishHole()");
@@ -190,30 +211,30 @@ function finishHole() {
   const currentStrokes = document.getElementById("current-strokes");
   const completed = document.getElementById("completed");
 
-  if (playerNames == playerDefault[0]) {
+  if (playerNames == playerNames[0]) {
     holeScoreP1[hole - 1] = strokes;
-  } else if (playerNames == playerDefault[1]) {
+  } else if (playerNames == playerNames[1]) {
     holeScoreP2[hole - 1] = strokes;
-  } else if (playerNames == playerDefault[2]) {
+  } else if (playerNames == playerNames[2]) {
     holeScoreP3[hole - 1] = strokes;
-  } else if (playerNames == playerDefault[3]) {
+  } else if (playerNames == playerNames[3]) {
     holeScoreP4[hole - 1] = strokes;
   }
 
   strokes = 0;
   currentStrokes.innerHTML = "Strokes: " + strokes;
 
-  if (playerNames == playerDefault[0]) {
+  if (playerNames == playerNames[0]) {
     player1Total();
-  } else if (playerNames == playerDefault[1]) {
+  } else if (playerNames == playerNames[1]) {
     player2Total();
-  } else if (playerNames == playerDefault[2]) {
+  } else if (playerNames == playerNames[2]) {
     player3Total();
-  } else if (playerNames == playerDefault[3]) {
+  } else if (playerNames == playerNames[3]) {
     player4Total();
   }
 
-  if (playerNames == playerDefault[3]) {
+  if (playerNames == playerNames[3]) {
     nextHole();
     nextPlayerHandler();
   } else {
