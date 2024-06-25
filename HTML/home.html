@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/CSS/mainstyle.css" />
     <link rel="stylesheet" href="/CSS/homestyle.css" />
-    <link rel="stylesheet" href="/CSS/userstyle.css" />
-    <link rel="stylesheet" href="/CSS/spstyle.css" />
     <title>Not Scratch</title>
   </head>
   <body>
@@ -16,13 +14,15 @@
           <img id="home-logo" src="/Logos/NotScratchFullWhiteYF.png" />
         </header>
         <div class="top-btn">
-          <button
-            id="strokeplay"
-            class="home-btn"
-            onclick="loadPage('strokeplay'); saveSelection(this);"
-          >
-            Stroke Play (Standard)
-          </button>
+          <a>
+            <button
+              id="strokeplay"
+              class="home-btn"
+              onclick="loadPage('strokeplay'); saveSelection(this);"
+            >
+              Stroke Play (Standard)
+            </button>
+          </a>
         </div>
         <div class="bottom-btns">
           <button

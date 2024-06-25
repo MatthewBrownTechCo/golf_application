@@ -188,7 +188,6 @@ function finishHole() {
   const playerDisplay = document.getElementById("player");
   const playerNames = playerDisplay.innerText;
   const currentStrokes = document.getElementById("current-strokes");
-  const completed = document.getElementById("completed");
 
   if (playerNames == playerDefault[0]) {
     holeScoreP1[hole - 1] = strokes;
