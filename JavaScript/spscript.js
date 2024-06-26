@@ -1,73 +1,23 @@
-// Transitions to a new html page dynamically, instead of loading it all
-function loadPage(page) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        document.getElementById("content").innerHTML = xhr.responseText;
-      } else {
-        console.error("Failed to load page:", xhr.status);
-      }
-    }
-  };
-  xhr.open("GET", page + ".html", true);
-  xhr.send();
-}
+// Global Variables //
+let parValue = [];
 
-// Saves the button selected at the game selection menu
-function saveSelection(button) {
-  selectedButton = button.id;
-}
+const heskethCourse = [4, 3, 4, 3, 4, 4, 5, 4, 4, 4, 3, 4, 5, 4, 4, 3, 5, 5];
 
-// Adds user and creates an ordered list
-function addUser() {
-  const nameElement = document.getElementById("user");
-  const user = nameElement.value;
-  nameElement.value = "";
+const holeScoreP1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const holeScoreP2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const holeScoreP3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const holeScoreP4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  if (user.length < 3) {
-    return alert("Names must be at least 3 characters long");
-  }
+let hole = 1;
 
-  const list = document.getElementById("list");
+let currentPlayerIndex = 0;
 
-  if (playerNames.length >= 4) {
-    return alert("You can only have up to 4 players");
-  }
+let strokes = 0;
 
-  const nameList = document.createElement("li");
-  const text = document.createTextNode(user);
-
-  list.appendChild(nameList);
-  nameList.appendChild(text);
-
-  playerNames.push(user);
-
-  nameList.setAttribute("onclick", "this.remove()");
-}
-
-function playerFill() {
-  if (playerNames.length == 0) {
-    playerNames.push("Player 1", "Player 2", "Player 3", "Player 4");
-  } else if (playerNames.length == 1) {
-    playerNames.push("Player 2", "Player 3", "Player 4");
-  } else if (playerNames.length == 2) {
-    playerNames.push("Player 3", "Player 4");
-  } else if (playerNames.length == 3) {
-    playerNames.push("Player 4");
-  }
-
-  console.log(playerNames);
-}
-
-function initialUser() {
-  const player = document.getElementById("player");
-  if (player) {
-    player.innerHTML = playerNames[0];
-  } else {
-    console.error("Element with id 'player' not found.");
-  }
-}
+let p1Total = 0;
+let p2Total = 0;
+let p3Total = 0;
+let p4Total = 0;
 
 // Prev hole
 function prevHole() {
@@ -209,7 +159,6 @@ function finishHole() {
   const playerDisplay = document.getElementById("player");
   const playerNames = playerDisplay.innerText;
   const currentStrokes = document.getElementById("current-strokes");
-  const completed = document.getElementById("completed");
 
   if (playerNames == playerNames[0]) {
     holeScoreP1[hole - 1] = strokes;
