@@ -124,6 +124,7 @@ function player1Total() {
   return p1Total;
 }
 
+// LEFT OFF HERE! //
 function player2Total() {
   const player2Score = document.getElementById("player2");
 
