@@ -19,6 +19,11 @@ let p2Total = 0;
 let p3Total = 0;
 let p4Total = 0;
 
+const storedNames = localStorage.getItem("playerNames");
+const playerNames = JSON.parse(storedNames);
+
+const player = document.getElementById("player");
+
 // Prev hole
 function prevHole() {
   const currentHole = document.getElementById("hole");
@@ -114,7 +119,7 @@ function player1Total() {
     p1Total += holeScoreP1[i];
     console.log(p1Total);
   }
-  player1Score.innerHTML = "Player 1: " + p1Total;
+  player1Score.innerHTML = `${playerNames[0]}: ` + p1Total;
   p1Total = 0;
   return p1Total;
 }
@@ -126,7 +131,7 @@ function player2Total() {
     p2Total += holeScoreP2[i];
     console.log(p2Total);
   }
-  player2Score.innerHTML = "Player 2: " + p2Total;
+  player2Score.innerHTML = playerNames[1] + p2Total;
   p2Total = 0;
   return p2Total;
 }
@@ -157,33 +162,33 @@ function player4Total() {
 
 function finishHole() {
   const playerDisplay = document.getElementById("player");
-  const playerNames = playerDisplay.innerText;
+  const visiblePlayer = playerDisplay.innerText;
   const currentStrokes = document.getElementById("current-strokes");
 
-  if (playerNames == playerNames[0]) {
+  if (visiblePlayer == playerNames[0]) {
     holeScoreP1[hole - 1] = strokes;
-  } else if (playerNames == playerNames[1]) {
+  } else if (visiblePlayer == playerNames[1]) {
     holeScoreP2[hole - 1] = strokes;
-  } else if (playerNames == playerNames[2]) {
+  } else if (visiblePlayer == playerNames[2]) {
     holeScoreP3[hole - 1] = strokes;
-  } else if (playerNames == playerNames[3]) {
+  } else if (visiblePlayer == playerNames[3]) {
     holeScoreP4[hole - 1] = strokes;
   }
 
   strokes = 0;
   currentStrokes.innerHTML = "Strokes: " + strokes;
 
-  if (playerNames == playerNames[0]) {
+  if (visiblePlayer == playerNames[0]) {
     player1Total();
-  } else if (playerNames == playerNames[1]) {
+  } else if (visiblePlayer == playerNames[1]) {
     player2Total();
-  } else if (playerNames == playerNames[2]) {
+  } else if (visiblePlayer == playerNames[2]) {
     player3Total();
-  } else if (playerNames == playerNames[3]) {
+  } else if (visiblePlayer == playerNames[3]) {
     player4Total();
   }
 
-  if (playerNames == playerNames[3]) {
+  if (visiblePlayer == playerNames[3]) {
     nextHole();
     nextPlayerHandler();
   } else {
@@ -195,3 +200,5 @@ function finishHole() {
   console.log(holeScoreP3);
   console.log(holeScoreP4);
 }
+
+player.innerHTML = playerNames[0];

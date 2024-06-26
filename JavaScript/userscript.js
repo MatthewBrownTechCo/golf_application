@@ -28,6 +28,7 @@ function addUser() {
   nameList.setAttribute("onclick", "this.remove()");
 
   localStorage.setItem("users", user);
+  localStorage.setItem("playerNames", JSON.stringify(playerNames));
 }
 
 function playerFill() {
@@ -41,7 +42,7 @@ function playerFill() {
     playerNames.push("Player 4");
   }
 
-  localStorage.setItem("usernames", playerNames);
+  localStorage.setItem("playerNames", JSON.stringify(playerNames));
 }
 
 function initialUser() {
@@ -51,4 +52,10 @@ function initialUser() {
   } else {
     console.error("Element with id 'player' not found.");
   }
+}
+
+function pageNavigator() {
+  const selectedButton = localStorage.getItem("savedGameMode");
+
+  window.location.href = selectedButton + ".html";
 }
