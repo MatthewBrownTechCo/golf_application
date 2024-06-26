@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/CSS/mainstyle.css" />
     <link rel="stylesheet" href="/CSS/homestyle.css" />
-    <link rel="stylesheet" href="/CSS/userstyle.css" />
-    <link rel="stylesheet" href="/CSS/spstyle.css" />
     <title>Not Scratch</title>
   </head>
   <body>
@@ -16,56 +14,58 @@
           <img id="home-logo" src="/Logos/NotScratchFullWhiteYF.png" />
         </header>
         <div class="top-btn">
-          <button
-            id="strokeplay"
-            class="home-btn"
-            onclick="loadPage('users'); saveSelection(this);"
-          >
-            Stroke Play (Standard)
-          </button>
+          <a href="/HTML/users.html">
+            <button
+              id="strokeplay"
+              class="home-btn"
+              onclick="saveSelection(this);"
+            >
+              Stroke Play (Standard)
+            </button>
+          </a>
         </div>
         <div class="bottom-btns">
-          <button
-            id="threeputts"
-            class="home-btn"
-            onclick="loadPage('users'); saveSelection(this);"
-          >
-            Three Putts
-          </button>
-          <button
-            id="stableford"
-            class="home-btn"
-            onclick="loadPage('users'); saveSelection(this);"
-          >
-            Stableford
-          </button>
-          <button
-            id="gir"
-            class="home-btn"
-            onclick="loadPage('users'); saveSelection(this);"
-          >
-            GIR
-          </button>
-          <button
-            id="fir"
-            class="home-btn"
-            onclick="onclick"
-            ="loadPage('users'); saveSelection(this);"
-          >
-            FIR
-          </button>
-          <button
-            id="bbb"
-            class="home-btn"
-            onclick="onclick"
-            ="loadPage('users'); saveSelection(this);"
-          >
-            Bingo-Bango-Bongo
-          </button>
+          <a href="/HTML/users.html">
+            <button
+              id="threeputts"
+              class="home-btn"
+              onclick="saveSelection(this);"
+            >
+              Three Putts
+            </button>
+          </a>
+          <a href="/HTML/users.html">
+            <button
+              id="stableford"
+              class="home-btn"
+              onclick="saveSelection(this);"
+            >
+              Stableford
+            </button>
+          </a>
+          <a href="/HTML/users.html">
+            <button id="gir" class="home-btn" onclick="saveSelection(this);">
+              GIR
+            </button>
+          </a>
+          <a href="/HTML/users.html">
+            <button id="fir" class="home-btn" onclick="saveSelection(this);">
+              FIR
+            </button>
+          </a>
+          <a href="/HTML/users.html">
+            <button
+              id="bbb"
+              class="home-btn"
+              onclick="onclick"
+              ="saveSelection(this);"
+            >
+              Bingo-Bango-Bongo
+            </button>
+          </a>
         </div>
       </div>
     </div>
-    <script src="/JavaScript/variables.js"></script>
-    <script src="/JavaScript/functions.js"></script>
+    <script src="/JavaScript/homescript.js"></script>
   </body>
 </html>
