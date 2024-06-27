@@ -1,7 +1,7 @@
 // Global Variables //
 const playerNames = [];
 
-// Adds user and creates an ordered list
+// Functions //
 function addUser() {
   const nameElement = document.getElementById("user");
   const user = nameElement.value;

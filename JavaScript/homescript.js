@@ -1,7 +1,13 @@
 // Global Variables //
 let selectedButton = null;
 
-// Transitions to a new html page dynamically, instead of loading it all
+// Saves the button selected at the game selection menu
+function saveSelection(button) {
+  selectedButton = button.id;
+  localStorage.setItem("savedGameMode", selectedButton);
+}
+
+// Currently unused, but available if dynamic pages are desired) //
 function loadPage(page) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
@@ -15,10 +21,4 @@ function loadPage(page) {
   };
   xhr.open("GET", page + ".html", true);
   xhr.send();
-}
-
-// Saves the button selected at the game selection menu
-function saveSelection(button) {
-  selectedButton = button.id;
-  localStorage.setItem("savedGameMode", selectedButton);
 }

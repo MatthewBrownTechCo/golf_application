@@ -1,35 +1,28 @@
+// Storage //
+const storedNames = localStorage.getItem("playerNames");
+const playerNames = JSON.parse(storedNames);
+
 // Global Variables //
 let parValue = [];
-
 const heskethCourse = [4, 3, 4, 3, 4, 4, 5, 4, 4, 4, 3, 4, 5, 4, 4, 3, 5, 5];
-
 const holeScoreP1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const holeScoreP2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const holeScoreP3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const holeScoreP4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
 let hole = 1;
-
 let currentPlayerIndex = 0;
-
 let strokes = 0;
-
 let p1Total = 0;
 let p2Total = 0;
 let p3Total = 0;
 let p4Total = 0;
-
-const storedNames = localStorage.getItem("playerNames");
-const playerNames = JSON.parse(storedNames);
-
 const playerID = document.getElementById("player");
-
 const playerOne = document.getElementById("player1");
 const playerTwo = document.getElementById("player2");
 const playerThree = document.getElementById("player3");
 const playerFour = document.getElementById("player4");
 
-// Prev hole
+// Functions //
 function prevHole() {
   const currentHole = document.getElementById("hole");
   hole--;
@@ -39,7 +32,6 @@ function prevHole() {
   currentHole.innerHTML = `Hole: ${hole}`;
 }
 
-// Next hole
 function nextHole() {
   const currentHole = document.getElementById("hole");
   hole++;
@@ -84,7 +76,7 @@ function nextPlayerHandler() {
 
   if (hole == 18 && playerDisplay.innerText == playerNames[3]) {
     completed.innerHTML = "Finish Game";
-    completed.setAttribute("onclick", "endGameNavigator()");
+    completed.setAttribute("onclick", "finishHole(); endGameNavigator()");
   }
 
   if (
@@ -96,9 +88,6 @@ function nextPlayerHandler() {
   }
 }
 
-// end of section //
-
-// Strokes function
 function minusOne() {
   const currentStrokes = document.getElementById("current-strokes");
   strokes--;
@@ -227,7 +216,6 @@ function finishHole() {
 
 // On Page Load //
 playerID.innerHTML = playerNames[0];
-
 playerOne.innerHTML = `${playerNames[0]}: ${p1Total}`;
 playerTwo.innerHTML = `${playerNames[1]}: ${p2Total}`;
 playerThree.innerHTML = `${playerNames[2]}: ${p3Total}`;
