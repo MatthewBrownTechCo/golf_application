@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="/CSS/scorecard.css" />
   </head>
   <body>
-    <header class="centered-logo">
-      <img id="small-logo" src="/Logos/NotScratchShortWhiteYF.png" />
-    </header>
-    <div id="endgame-title">Game over! Thanks for playing!</div>
-    <div class="final-score">
-      <span class="score-values" id="player1">Player 1: 0</span>
-      <span class="score-values" id="player2">Player 2: 0</span>
-      <span class="score-values" id="player3">Player 3: 0</span>
-      <span class="score-values" id="player4">Player 4: 0</span>
+    <div class="container">
+      <header class="centered-logo">
+        <img class="small-logo" src="/Logos/NotScratchShortWhiteYF.png" />
+      </header>
+      <div id="endgame-title">Game over! Thanks for playing!</div>
+      <div class="final-score">
+        <span class="score-values" id="player1End"></span>
+        <span class="score-values" id="player2End"></span>
+        <span class="score-values" id="player3End"></span>
+        <span class="score-values" id="player4End"></span>
+      </div>
+      <div class="gameover-btn">
+        <a href="/HTML/home.html" id="gameover">Return Home </a>
+      </div>
     </div>
-    <div class="gameover-btn">
-      <a href="/HTML/home.html" id="gameover">Return Home </a>
-    </div>
-    <script src="/JavaScript/variables.js"></script>
-    <script src="/JavaScript/functions.js"></script>
+    <script src="/JavaScript/scorescript.js"></script>
   </body>
 </html>

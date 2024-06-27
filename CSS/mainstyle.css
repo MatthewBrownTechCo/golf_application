@@ -14,7 +14,7 @@ body {
   position: center;
 }
 
-#small-logo {
+.small-logo {
   width: 20%;
   text-align: center;
 }

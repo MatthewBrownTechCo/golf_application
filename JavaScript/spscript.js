@@ -22,7 +22,12 @@ let p4Total = 0;
 const storedNames = localStorage.getItem("playerNames");
 const playerNames = JSON.parse(storedNames);
 
-const player = document.getElementById("player");
+const playerID = document.getElementById("player");
+
+const playerOne = document.getElementById("player1");
+const playerTwo = document.getElementById("player2");
+const playerThree = document.getElementById("player3");
+const playerFour = document.getElementById("player4");
 
 // Prev hole
 function prevHole() {
@@ -31,7 +36,7 @@ function prevHole() {
   if (hole < 1) {
     hole = 1;
   }
-  currentHole.innerHTML = "Hole: " + hole;
+  currentHole.innerHTML = `Hole: ${hole}`;
 }
 
 // Next hole
@@ -41,10 +46,12 @@ function nextHole() {
   if (hole > 18) {
     hole = 18;
   }
-  currentHole.innerHTML = "Hole: " + hole;
+  currentHole.innerHTML = `Hole: ${hole}`;
 }
 
-// Placeholder function for players 1-4
+function endGameNavigator() {
+  window.location.href = "scorecard.html";
+}
 
 function prevPlayerHandler() {
   const playerDisplay = document.getElementById("player");
@@ -64,7 +71,7 @@ function prevPlayerHandler() {
     playerDisplay.innerText !== playerNames[3]
   ) {
     completed.innerHTML = "Finish Hole";
-    completed.setAttribute("onclick", "finishHole()");
+    completed.setAttribute("onclick", "endGameNavigator()");
   }
 }
 
@@ -77,7 +84,7 @@ function nextPlayerHandler() {
 
   if (hole == 18 && playerDisplay.innerText == playerNames[3]) {
     completed.innerHTML = "Finish Game";
-    completed.setAttribute("onclick", "loadPage('scorecard')");
+    completed.setAttribute("onclick", "endGameNavigator()");
   }
 
   if (
@@ -119,12 +126,11 @@ function player1Total() {
     p1Total += holeScoreP1[i];
     console.log(p1Total);
   }
-  player1Score.innerHTML = `${playerNames[0]}: ` + p1Total;
+  player1Score.innerHTML = `${playerNames[0]}: ${p1Total}`;
   p1Total = 0;
   return p1Total;
 }
 
-// LEFT OFF HERE! //
 function player2Total() {
   const player2Score = document.getElementById("player2");
 
@@ -132,7 +138,7 @@ function player2Total() {
     p2Total += holeScoreP2[i];
     console.log(p2Total);
   }
-  player2Score.innerHTML = playerNames[1] + p2Total;
+  player2Score.innerHTML = `${playerNames[1]}: ${p2Total}`;
   p2Total = 0;
   return p2Total;
 }
@@ -144,7 +150,7 @@ function player3Total() {
     p3Total += holeScoreP3[i];
     console.log(p3Total);
   }
-  player3Score.innerHTML = "Player 3: " + p3Total;
+  player3Score.innerHTML = `${playerNames[2]}: ${p3Total}`;
   p3Total = 0;
   return p3Total;
 }
@@ -156,7 +162,7 @@ function player4Total() {
     p4Total += holeScoreP4[i];
     console.log(p4Total);
   }
-  player4Score.innerHTML = "Player 4: " + p4Total;
+  player4Score.innerHTML = `${playerNames[3]}: ${p4Total}`;
   p4Total = 0;
   return p4Total;
 }
@@ -168,16 +174,28 @@ function finishHole() {
 
   if (visiblePlayer == playerNames[0]) {
     holeScoreP1[hole - 1] = strokes;
+    if (strokes < 0) {
+      holeScoreP1[hole - 1] = 0;
+    }
   } else if (visiblePlayer == playerNames[1]) {
     holeScoreP2[hole - 1] = strokes;
+    if (strokes < 0) {
+      holeScoreP2[hole - 1] = 0;
+    }
   } else if (visiblePlayer == playerNames[2]) {
     holeScoreP3[hole - 1] = strokes;
+    if (strokes < 0) {
+      holeScoreP3[hole - 1] = 0;
+    }
   } else if (visiblePlayer == playerNames[3]) {
     holeScoreP4[hole - 1] = strokes;
+    if (strokes < 0) {
+      holeScoreP4[hole - 1] = 0;
+    }
   }
 
   strokes = 0;
-  currentStrokes.innerHTML = "Strokes: " + strokes;
+  currentStrokes.innerHTML = `Strokes: ${strokes}`;
 
   if (visiblePlayer == playerNames[0]) {
     player1Total();
@@ -196,10 +214,21 @@ function finishHole() {
     nextPlayerHandler();
   }
 
+  localStorage.setItem("p1Score", JSON.stringify(holeScoreP1));
+  localStorage.setItem("p2Score", JSON.stringify(holeScoreP2));
+  localStorage.setItem("p3Score", JSON.stringify(holeScoreP3));
+  localStorage.setItem("p4Score", JSON.stringify(holeScoreP4));
+
   console.log(holeScoreP1);
   console.log(holeScoreP2);
   console.log(holeScoreP3);
   console.log(holeScoreP4);
 }
 
-player.innerHTML = playerNames[0];
+// On Page Load //
+playerID.innerHTML = playerNames[0];
+
+playerOne.innerHTML = `${playerNames[0]}: ${p1Total}`;
+playerTwo.innerHTML = `${playerNames[1]}: ${p2Total}`;
+playerThree.innerHTML = `${playerNames[2]}: ${p3Total}`;
+playerFour.innerHTML = `${playerNames[3]}: ${p4Total}`;

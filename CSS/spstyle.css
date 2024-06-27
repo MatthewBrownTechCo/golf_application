@@ -21,6 +21,7 @@
   font-size: 30px;
   width: 90px;
   white-space: nowrap;
+  text-align: center;
 }
 
 #next-hole {
@@ -53,6 +54,8 @@
 
 #player {
   font-size: 30px;
+  width: 105px;
+  text-align: center;
 }
 
 #next-btn {
