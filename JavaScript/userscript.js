@@ -64,5 +64,5 @@ function initialUser() {
 function pageNavigator() {
   const selectedButton = localStorage.getItem("savedGameMode");
 
-  window.location.href = selectedButton + ".html";
+  window.location.href = `${selectedButton}.html`;
 }
