@@ -23,11 +23,18 @@ function addUser() {
   list.appendChild(nameList);
   nameList.appendChild(text);
 
-  playerNames.push(user);
-
   nameList.setAttribute("onclick", "this.remove()");
 
-  localStorage.setItem("users", user);
+  nameList.addEventListener("mouseenter", function () {
+    this.classList.add("pointer");
+  });
+
+  nameList.addEventListener("mouseleave", function () {
+    this.classList.remove("pointer");
+  });
+
+  playerNames.push(user);
+
   localStorage.setItem("playerNames", JSON.stringify(playerNames));
 }
 
