@@ -52,15 +52,6 @@ function playerFill() {
   localStorage.setItem("playerNames", JSON.stringify(playerNames));
 }
 
-function initialUser() {
-  const player = document.getElementById("player");
-  if (player) {
-    player.innerHTML = playerNames[0];
-  } else {
-    console.error("Element with id 'player' not found.");
-  }
-}
-
 function pageNavigator() {
   const selectedButton = localStorage.getItem("savedGameMode");
 

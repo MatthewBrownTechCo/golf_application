@@ -21,6 +21,7 @@ const playerOne = document.getElementById("player1");
 const playerTwo = document.getElementById("player2");
 const playerThree = document.getElementById("player3");
 const playerFour = document.getElementById("player4");
+const popup = document.getElementById("popup");
 
 // Functions //
 function prevHole() {
@@ -212,6 +213,14 @@ function finishHole() {
   console.log(holeScoreP2);
   console.log(holeScoreP3);
   console.log(holeScoreP4);
+}
+
+function openPopUp() {
+  popup.classList.add("open-popup");
+}
+
+function closePopUp() {
+  popup.classList.remove("open-popup");
 }
 
 // On Page Load //

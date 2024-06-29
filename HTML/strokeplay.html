@@ -6,8 +6,6 @@
     <title>Stroke Play</title>
     <link rel="stylesheet" href="/CSS/mainstyle.css" />
     <link rel="stylesheet" href="/CSS/spstyle.css" />
-    <link rel="stylesheet" href="/CSS/userstyle.css" />
-    <link rel="stylesheet" href="/CSS/spstyle.css" />
   </head>
   <body>
     <div class="container">
@@ -51,6 +49,8 @@
         <span class="score-values" id="player3"></span>
         <span class="score-values" id="player4"></span>
       </div>
+      <br />
+      <button id="rules" class="button" onclick="openPopUp()">Rules</button>
       <div class="stroke-counter">
         <button id="minus-stroke" class="mps-button" onclick="minusOne()">
           -1
@@ -60,6 +60,27 @@
         </button>
         <button id="plus-stroke" class="mps-button" onclick="plusOne()">
           +1
+        </button>
+      </div>
+      <div class="popup" id="popup">
+        <h2>Strokeplay Rules</h2>
+        <p>
+          The rules of Strokeplay are simple. Each time that you hit the golf
+          ball, you accrue a stroke. After all 18 holes have been completed,
+          whoever has hit the ball in all 18 holes in the least amount of total
+          strokes wins!
+        </p>
+        <p>
+          Each hole at a golf course has a set par. “Par” represents the number
+          of strokes a golfer is expected to make on the hole or course. Many
+          golfers like to tally their +/- on each hole based on that par value.
+          For example, if you are on a par 4 hole, but hit the ball in the hole
+          in 3 strokes, your score on that hole is "-1". Alternatively, if you
+          hit the ball in the hole in 6 strokes, your score is "+2" for that
+          hole.
+        </p>
+        <button type="button" class="close-rules" onclick="closePopUp()">
+          Close
         </button>
       </div>
     </div>
