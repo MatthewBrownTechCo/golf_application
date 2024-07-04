@@ -11,21 +11,21 @@ const holeScoreP3 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const holeScoreP4 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let hole = 1;
 let currentPlayerIndex = 0;
-let strokes = 0;
+let threePutts = 0;
 let p1Total = 0;
 let p2Total = 0;
 let p3Total = 0;
 let p4Total = 0;
-const playerID = document.getElementById("sp-player");
-const playerOne = document.getElementById("sp-player1");
-const playerTwo = document.getElementById("sp-player2");
-const playerThree = document.getElementById("sp-player3");
-const playerFour = document.getElementById("sp-player4");
-const popup = document.getElementById("sp-popup");
+const playerID = document.getElementById("tp-player");
+const playerOne = document.getElementById("tp-player1");
+const playerTwo = document.getElementById("tp-player2");
+const playerThree = document.getElementById("tp-player3");
+const playerFour = document.getElementById("tp-player4");
+const popup = document.getElementById("tp-popup");
 
 // Functions //
 function prevHole() {
-  const currentHole = document.getElementById("sp-hole");
+  const currentHole = document.getElementById("tp-hole");
   hole--;
   if (hole < 1) {
     hole = 1;
@@ -34,7 +34,7 @@ function prevHole() {
 }
 
 function nextHole() {
-  const currentHole = document.getElementById("sp-hole");
+  const currentHole = document.getElementById("tp-hole");
   hole++;
   if (hole > 18) {
     hole = 18;
@@ -47,8 +47,8 @@ function endGameNavigator() {
 }
 
 function prevPlayerHandler() {
-  const playerDisplay = document.getElementById("sp-player");
-  const completed = document.getElementById("sp-completed");
+  const playerDisplay = document.getElementById("tp-player");
+  const completed = document.getElementById("tp-completed");
 
   currentPlayerIndex =
     currentPlayerIndex === 0 ? playerNames.length - 1 : currentPlayerIndex - 1;
@@ -69,8 +69,8 @@ function prevPlayerHandler() {
 }
 
 function nextPlayerHandler() {
-  const playerDisplay = document.getElementById("sp-player");
-  const completed = document.getElementById("sp-completed");
+  const playerDisplay = document.getElementById("tp-player");
+  const completed = document.getElementById("tp-completed");
 
   currentPlayerIndex = (currentPlayerIndex + 1) % playerNames.length;
   playerDisplay.innerHTML = playerNames[currentPlayerIndex];
@@ -90,31 +90,36 @@ function nextPlayerHandler() {
 }
 
 function minusOne() {
-  const currentStrokes = document.getElementById("current-strokes");
-  strokes--;
-  if (strokes < 0) {
-    return;
+  const currentTp = document.getElementById("current-tp");
+  threePutts--;
+  if (threePutts < 0) {
+    threePutts = 0;
+  } else if (threePutts > 1) {
+    threePutts = 0;
   }
-  currentStrokes.innerHTML = `Strokes: ${strokes}`;
-  return strokes;
+
+  currentTp.innerHTML = `Three-Putts: ${threePutts}`;
+  return threePutts;
 }
 
 function plusOne() {
-  const currentStrokes = document.getElementById("current-strokes");
-  strokes++;
-  if (strokes <= 0) {
-    strokes = 1;
+  const currentTp = document.getElementById("current-tp");
+  threePutts++;
+  if (threePutts <= 0) {
+    threePutts = 0;
+  } else if (threePutts > 1) {
+    threePutts = 1;
   }
-  currentStrokes.innerHTML = `Strokes: ${strokes}`;
-  return strokes;
+
+  currentTp.innerHTML = `Three-Putts: ${threePutts}`;
+  return threePutts;
 }
 
 function player1Total() {
-  const player1Score = document.getElementById("sp-player1");
+  const player1Score = document.getElementById("tp-player1");
 
   for (let i = 0; i <= holeScoreP1.length - 1; i++) {
     p1Total += holeScoreP1[i];
-    console.log(p1Total);
   }
   player1Score.innerHTML = `${playerNames[0]}: ${p1Total}`;
   p1Total = 0;
@@ -122,11 +127,10 @@ function player1Total() {
 }
 
 function player2Total() {
-  const player2Score = document.getElementById("sp-player2");
+  const player2Score = document.getElementById("tp-player2");
 
   for (let i = 0; i <= holeScoreP2.length - 1; i++) {
     p2Total += holeScoreP2[i];
-    console.log(p2Total);
   }
   player2Score.innerHTML = `${playerNames[1]}: ${p2Total}`;
   p2Total = 0;
@@ -134,11 +138,10 @@ function player2Total() {
 }
 
 function player3Total() {
-  const player3Score = document.getElementById("sp-player3");
+  const player3Score = document.getElementById("tp-player3");
 
   for (let i = 0; i <= holeScoreP3.length - 1; i++) {
     p3Total += holeScoreP3[i];
-    console.log(p3Total);
   }
   player3Score.innerHTML = `${playerNames[2]}: ${p3Total}`;
   p3Total = 0;
@@ -146,11 +149,10 @@ function player3Total() {
 }
 
 function player4Total() {
-  const player4Score = document.getElementById("sp-player4");
+  const player4Score = document.getElementById("tp-player4");
 
   for (let i = 0; i <= holeScoreP4.length - 1; i++) {
     p4Total += holeScoreP4[i];
-    console.log(p4Total);
   }
   player4Score.innerHTML = `${playerNames[3]}: ${p4Total}`;
   p4Total = 0;
@@ -158,34 +160,34 @@ function player4Total() {
 }
 
 function finishHole() {
-  const playerDisplay = document.getElementById("sp-player");
+  const playerDisplay = document.getElementById("tp-player");
   const visiblePlayer = playerDisplay.innerText;
-  const currentStrokes = document.getElementById("current-strokes");
+  const currentTp = document.getElementById("current-tp");
 
   if (visiblePlayer == playerNames[0]) {
-    holeScoreP1[hole - 1] = strokes;
-    if (strokes < 0) {
+    holeScoreP1[hole - 1] = threePutts;
+    if (threePutts < 0) {
       holeScoreP1[hole - 1] = 0;
     }
   } else if (visiblePlayer == playerNames[1]) {
-    holeScoreP2[hole - 1] = strokes;
-    if (strokes < 0) {
+    holeScoreP2[hole - 1] = threePutts;
+    if (threePutts < 0) {
       holeScoreP2[hole - 1] = 0;
     }
   } else if (visiblePlayer == playerNames[2]) {
-    holeScoreP3[hole - 1] = strokes;
-    if (strokes < 0) {
+    holeScoreP3[hole - 1] = threePutts;
+    if (threePutts < 0) {
       holeScoreP3[hole - 1] = 0;
     }
   } else if (visiblePlayer == playerNames[3]) {
-    holeScoreP4[hole - 1] = strokes;
-    if (strokes < 0) {
+    holeScoreP4[hole - 1] = threePutts;
+    if (threePutts < 0) {
       holeScoreP4[hole - 1] = 0;
     }
   }
 
-  strokes = 0;
-  currentStrokes.innerHTML = `Strokes: ${strokes}`;
+  threePutts = 0;
+  currentTp.innerHTML = `Three-Putts: ${threePutts}`;
 
   if (visiblePlayer == playerNames[0]) {
     player1Total();
@@ -208,11 +210,6 @@ function finishHole() {
   localStorage.setItem("p2Score", JSON.stringify(holeScoreP2));
   localStorage.setItem("p3Score", JSON.stringify(holeScoreP3));
   localStorage.setItem("p4Score", JSON.stringify(holeScoreP4));
-
-  console.log(holeScoreP1);
-  console.log(holeScoreP2);
-  console.log(holeScoreP3);
-  console.log(holeScoreP4);
 }
 
 function openPopUp() {

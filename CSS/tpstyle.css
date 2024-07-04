@@ -13,7 +13,7 @@
   align-items: center;
 }
 
-#sp-prev-hole {
+#tp-prev-hole {
   margin-right: 48px;
 }
 
@@ -29,14 +29,14 @@
   cursor: pointer;
 }
 
-#sp-hole {
+#tp-hole {
   font-size: 30px;
   width: 90px;
   white-space: nowrap;
   text-align: center;
 }
 
-#sp-next-hole {
+#tp-next-hole {
   margin-left: 48px;
 }
 
@@ -72,26 +72,26 @@
   text-align: center;
 }
 
-#sp-back-btn {
+#tp-back-btn {
   margin-right: 40px;
 }
 
-#sp-player {
+#tp-player {
   font-size: 30px;
   width: 105px;
   text-align: center;
 }
 
-#sp-next-btn {
+#tp-next-btn {
   margin-left: 40px;
 }
 
-#current-strokes {
+#current-tp {
   margin-top: 2%;
   font-size: 60px;
 }
 
-#sp-rules {
+#tp-rules {
   height: 50px;
   width: 100px;
   color: rgb(228, 255, 0);
@@ -101,7 +101,7 @@
   text-align: center;
 }
 
-#sp-rules:hover {
+#tp-rules:hover {
   background-color: rgba(255, 255, 255, 0.244);
   cursor: pointer;
 }
@@ -110,7 +110,7 @@
   margin-top: 30px;
 }
 
-#minus-stroke {
+#minus-tp {
   margin-right: 50px;
   font-size: 35px;
   background: none;
@@ -118,12 +118,12 @@
   color: rgb(228, 255, 0);
 }
 
-#minus-stroke:hover {
+#minus-tp:hover {
   background-color: rgba(255, 255, 255, 0.244);
   cursor: pointer;
 }
 
-#sp-completed {
+#tp-completed {
   width: 230px;
   height: 100px;
   font-size: 35px;
@@ -133,12 +133,12 @@
   color: rgb(228, 255, 0);
 }
 
-#sp-completed:hover {
+#tp-completed:hover {
   background-color: rgba(255, 255, 255, 0.244);
   cursor: pointer;
 }
 
-#plus-stroke {
+#plus-tp {
   margin-left: 50px;
   font-size: 35px;
   background: none;
@@ -146,7 +146,7 @@
   color: rgb(228, 255, 0);
 }
 
-#plus-stroke:hover {
+#plus-tp:hover {
   background-color: rgba(255, 255, 255, 0.244);
   cursor: pointer;
 }

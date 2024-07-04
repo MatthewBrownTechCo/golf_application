@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stroke Play</title>
     <link rel="stylesheet" href="/CSS/mainstyle.css" />
-    <link rel="stylesheet" href="/CSS/spstyle.css" />
+    <link rel="stylesheet" href="/CSS/tpstyle.css" />
   </head>
   <body>
     <div class="container">
@@ -13,14 +13,14 @@
         <img class="small-logo" src="/Logos/NotScratchShortWhiteYF.png" />
       </header>
       <div class="hole-select">
-        <button id="sp-prev-hole" class="button" onclick="prevHole()">
+        <button id="tp-prev-hole" class="button" onclick="prevHole()">
           <img
             src="https://cdn.discordapp.com/attachments/465350957077889033/1250616118486368317/Pngtreeup_direction_arrow_icon_4243605.png?ex=666b9685&is=666a4505&hm=132cc72a0455a1d00fe060ed83461d1a0e52328630f86490c2740071295da236&"
             class="back-arrow"
           />
         </button>
-        <span id="sp-hole">Hole: 1</span>
-        <button id="sp-next-hole" class="button" onclick="nextHole()">
+        <span id="tp-hole">Hole: 1</span>
+        <button id="tp-next-hole" class="button" onclick="nextHole()">
           <img
             src="https://cdn.discordapp.com/attachments/465350957077889033/1250616118486368317/Pngtreeup_direction_arrow_icon_4243605.png?ex=666b9685&is=666a4505&hm=132cc72a0455a1d00fe060ed83461d1a0e52328630f86490c2740071295da236&"
             class="fwd-arrow"
@@ -28,41 +28,39 @@
         </button>
       </div>
       <div class="player-select">
-        <button id="sp-back-btn" class="button" onclick="prevPlayerHandler()">
+        <button id="tp-back-btn" class="button" onclick="prevPlayerHandler()">
           <img
             src="https://cdn.discordapp.com/attachments/465350957077889033/1250616118486368317/Pngtreeup_direction_arrow_icon_4243605.png?ex=666b9685&is=666a4505&hm=132cc72a0455a1d00fe060ed83461d1a0e52328630f86490c2740071295da236&"
             class="back-arrow"
           />
         </button>
-        <span id="sp-player"></span>
-        <button id="sp-next-btn" class="button" onclick="nextPlayerHandler()">
+        <span id="tp-player"></span>
+        <button id="tp-next-btn" class="button" onclick="nextPlayerHandler()">
           <img
             src="https://cdn.discordapp.com/attachments/465350957077889033/1250616118486368317/Pngtreeup_direction_arrow_icon_4243605.png?ex=666b9685&is=666a4505&hm=132cc72a0455a1d00fe060ed83461d1a0e52328630f86490c2740071295da236&"
             class="fwd-arrow"
           />
         </button>
       </div>
-      <span id="current-strokes">Strokes: 0</span>
+      <span id="current-tp">Three-Putts: 0</span>
       <div class="ingame-score">
-        <span class="score-values" id="sp-player1"></span>
-        <span class="score-values" id="sp-player2"></span>
-        <span class="score-values" id="sp-player3"></span>
-        <span class="score-values" id="sp-player4"></span>
+        <span class="score-values" id="tp-player1"></span>
+        <span class="score-values" id="tp-player2"></span>
+        <span class="score-values" id="tp-player3"></span>
+        <span class="score-values" id="tp-player4"></span>
       </div>
       <br />
-      <button id="sp-rules" class="button" onclick="openPopUp()">Rules</button>
+      <button id="tp-rules" class="button" onclick="openPopUp()">Rules</button>
       <div class="stroke-counter">
-        <button id="minus-stroke" class="mps-button" onclick="minusOne()">
+        <button id="minus-tp" class="mps-button" onclick="minusOne()">
           -1
         </button>
-        <button id="sp-completed" class="mps-button" onclick="finishHole()">
+        <button id="tp-completed" class="mps-button" onclick="finishHole()">
           Finish Hole
         </button>
-        <button id="plus-stroke" class="mps-button" onclick="plusOne()">
-          +1
-        </button>
+        <button id="plus-tp" class="mps-button" onclick="plusOne()">+1</button>
       </div>
-      <div class="popup" id="sp-popup">
+      <div class="popup" id="tp-popup">
         <h2>Strokeplay Rules</h2>
         <p>
           The rules of Strokeplay are simple. Each time that you hit the golf
@@ -84,6 +82,6 @@
         </button>
       </div>
     </div>
-    <script src="/JavaScript/spscript.js"></script>
+    <script src="/JavaScript/tpscript.js"></script>
   </body>
 </html>
