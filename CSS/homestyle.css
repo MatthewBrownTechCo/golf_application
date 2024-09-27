@@ -9,6 +9,13 @@
   margin-top: 90px;
 }
 
+.header {
+  margin-top: 20px;
+  margin-bottom: 45px;
+  font-size: 35px;
+  text-align: center;
+}
+
 .top-btn {
   display: flex;
   flex-direction: row;
@@ -26,9 +33,14 @@
 
 .home-btn {
   display: inline-block;
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 300px;
   background-color: rgb(252, 252, 252);
   border-radius: 20px;
   font-size: 25px;
+}
+
+.home-btn:hover {
+  cursor: pointer;
+  background-color: rgba(252, 252, 252, 0.757);
 }

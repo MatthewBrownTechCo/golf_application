@@ -23,6 +23,20 @@
   margin-top: 15px;
 }
 
+.refresh-data {
+  display: inline-block;
+  height: 39px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  margin-top: 10px;
+}
+
+.refresh-data:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.337);
+}
+
 .name-list {
   font-size: 30px;
 }
@@ -51,6 +65,7 @@
 }
 
 .sp-btn:hover {
+  cursor: pointer;
   background-color: rgba(255, 255, 255, 0.337);
 }
 
@@ -75,10 +90,11 @@
 }
 
 .back-arrow {
-  height: 70px;
+  height: 50px;
   width: 50px;
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
   border: 2px solid transparent;
+  padding: 10px;
 }
 
 .back-arrow:hover {
@@ -87,10 +103,11 @@
 }
 
 .fwd-arrow {
-  height: 70px;
+  height: 50px;
   width: 50px;
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   border: 2px solid transparent;
+  padding: 10px;
 }
 
 .fwd-arrow:hover {

@@ -18,10 +18,11 @@
 }
 
 .back-arrow {
-  height: 70px;
+  height: 50px;
   width: 50px;
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
   border: 2px solid transparent;
+  padding: 10px;
 }
 
 .back-arrow:hover {
@@ -41,10 +42,12 @@
 }
 
 .fwd-arrow {
-  height: 70px;
+  height: 50px;
   width: 50px;
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   border: 2px solid transparent;
+  padding: 10px;
+  margin-left: -20px;
 }
 
 .fwd-arrow:hover {

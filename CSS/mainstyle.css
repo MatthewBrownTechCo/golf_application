@@ -12,6 +12,7 @@ body {
 #home-logo {
   width: 50%;
   position: center;
+  margin-top: -20%;
 }
 
 #users-logo {

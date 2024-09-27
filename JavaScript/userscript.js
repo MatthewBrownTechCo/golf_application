@@ -1,5 +1,6 @@
 // Global Variables //
 const playerNames = [];
+const bannedNames = new Set();
 
 // Functions //
 function addUser() {
@@ -23,19 +24,13 @@ function addUser() {
   list.appendChild(nameList);
   nameList.appendChild(text);
 
-  nameList.setAttribute("onclick", "this.remove()");
-
-  nameList.addEventListener("mouseenter", function () {
-    this.classList.add("pointer");
-  });
-
-  nameList.addEventListener("mouseleave", function () {
-    this.classList.remove("pointer");
-  });
-
   playerNames.push(user);
 
   localStorage.setItem("playerNames", JSON.stringify(playerNames));
+}
+
+function refreshData() {
+  window.location.href = "users.html";
 }
 
 function playerFill() {

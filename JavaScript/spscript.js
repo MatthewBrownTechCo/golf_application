@@ -56,7 +56,7 @@ function prevPlayerHandler() {
 
   if (hole == 18 && playerDisplay.innerText == playerNames[3]) {
     completed.innerHTML = "Finish Game";
-    completed.setAttribute("onclick", "finishGame()");
+    completed.setAttribute("onclick", "finishHole(); endGameNavigator()");
   }
 
   if (
@@ -64,7 +64,7 @@ function prevPlayerHandler() {
     playerDisplay.innerText !== playerNames[3]
   ) {
     completed.innerHTML = "Finish Hole";
-    completed.setAttribute("onclick", "endGameNavigator()");
+    completed.setAttribute("onclick", "finishHole()");
   }
 }
 
