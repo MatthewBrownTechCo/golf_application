@@ -45,10 +45,5 @@ function playerFill() {
   }
 
   localStorage.setItem("playerNames", JSON.stringify(playerNames));
-}
-
-function pageNavigator() {
-  const selectedButton = localStorage.getItem("savedGameMode");
-
-  window.location.href = `${selectedButton}.html`;
+  window.location.href = `strokeplay.html`;
 }

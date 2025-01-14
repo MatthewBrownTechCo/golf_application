@@ -26,24 +26,18 @@ const popup = document.getElementById("sp-popup");
 // Functions //
 function prevHole() {
   const currentHole = document.getElementById("sp-hole");
-  hole--;
-  if (hole < 1) {
-    hole = 1;
-  }
-  currentHole.innerHTML = `Hole: ${hole}`;
+  if (hole > 1) {
+    hole--;
+    currentHole.innerHTML = `Hole: ${hole}`;
+  } else return;
 }
 
 function nextHole() {
   const currentHole = document.getElementById("sp-hole");
-  hole++;
-  if (hole > 18) {
-    hole = 18;
-  }
-  currentHole.innerHTML = `Hole: ${hole}`;
-}
-
-function endGameNavigator() {
-  window.location.href = "scorecard.html";
+  if (hole < 18) {
+    hole++;
+    currentHole.innerHTML = `Hole: ${hole}`;
+  } else return;
 }
 
 function prevPlayerHandler() {
@@ -56,7 +50,10 @@ function prevPlayerHandler() {
 
   if (hole == 18 && playerDisplay.innerText == playerNames[3]) {
     completed.innerHTML = "Finish Game";
-    completed.setAttribute("onclick", "finishHole(); endGameNavigator()");
+    completed.setAttribute(
+      "onclick",
+      "finishHole(); window.location.href = 'scorecard.html'"
+    );
   }
 
   if (
