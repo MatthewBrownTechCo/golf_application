@@ -74,7 +74,10 @@ function nextPlayerHandler() {
 
   if (hole == 18 && playerDisplay.innerText == playerNames[3]) {
     completed.innerHTML = "Finish Game";
-    completed.setAttribute("onclick", "finishHole(); endGameNavigator()");
+    completed.setAttribute(
+      "onclick",
+      "finishHole(); window.location.href = 'scorecard.html'"
+    );
   }
 
   if (
